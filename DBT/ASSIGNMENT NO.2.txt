@@ -1,0 +1,16 @@
+
+Assignment –2
+
+Introducing Relational Databases.
+1) Which field of the Customers table is the primary key?
+ANS-Customer_id
+
+2) What is the 4th column of the Customers table?
+ANS-Rating
+
+3) What is another word for row? For column?
+ANS-In a relational database, a row is called a tuple or records
+ column is called an attribute or field.
+
+4) Why isn’t it possible to see the first five rows of a table?
+ANS-SQL tables represent unordered sets. So, there is no such thing as the first five rows or last row -- unless a column explicitly defines the ordering. Often, a table has some sort of auto-incremented id column, which can be used for this purpose.

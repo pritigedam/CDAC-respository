@@ -1,0 +1,76 @@
+
+Assignment –7
+Summarizing Data with Aggregate Functions.
+
+1) Write a query that counts all orders for October 3.
+ANS-
+mysql> Select COUNT(ODATE) from ORDERS
+    -> where ODATE='1990-10-03';
++--------------+
+| COUNT(ODATE) |
++--------------+
+|            5 |
++--------------+
+1 row in set (0.01 sec)
+
+2) Write a query that counts the number of different non-NULL city values in the Customers table.
+ANS-
+mysql> Select COUNT(DISTINCT CITY) from CUSTOMERS
+    -> where CITY!=NULL;
++----------------------+
+| COUNT(DISTINCT CITY) |
++----------------------+
+|                    0 |
++----------------------+
+1 row in set (0.01 sec)
+
+3) Write a query that selects each customer’s smallest order.
+ANS-
+mysql> Select  MIN(AMT)
+    -> from ORDERS;
++----------+
+| MIN(AMT) |
++----------+
+|    18.69 |
++----------+
+1 row in set (0.00 sec)
+
+
+4) Write a query that selects the first customer, in alphabetical order, whose name begins with G.
+ANS-
+mysql> Select * from CUSTOMERS
+    -> where Cname like 'G%';
++------+----------+--------+--------+------+
+| Cnum | Cname    | City   | Rating | Snum |
++------+----------+--------+--------+------+
+| 2002 | Giovanni | Rome   |    200 | 1003 |
+| 2004 | Grass    | Berlin |    300 | 1002 |
++------+----------+--------+--------+------+
+2 rows in set (0.00 sec)
+
+5) Write a query that selects the highest rating in each city.
+ANS-
+mysql> Select MAX(RATING)
+    -> from CUSTOMERS;
++-------------+
+| MAX(RATING) |
++-------------+
+|         300 |
++-------------+
+1 row in set (0.00 sec)
+
+6) Write a query that counts the number of salespeople registering orders for each day. (If a salesperson has more than one order on a given day, he or she should be counted only once.).
+ANS-
+mysql> Select COUNT(ODATE)
+    -> FROM ORDERS
+    -> GROUP BY ODATE;
++--------------+
+| COUNT(ODATE) |
++--------------+
+|            5 |
+|            2 |
+|            1 |
+|            2 |
++--------------+
+4 rows in set (0.00 sec)
+

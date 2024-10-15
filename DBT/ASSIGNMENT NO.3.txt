@@ -1,0 +1,18 @@
+
+Assignment –3
+1) Does ANSI recognize the data type DATE?
+ANS-
+	Yes, ANSI recognizes the date data type: 
+
+ANSI SQL standard definition: The ANSI SQL standard defines the date data type for the Gregorian calendar. 
+
+Datetime data types: The date range for datetime data types is 0001-01-01 CE through 9999-12-31 CE. 
+String literal format: The default string literal format for the date data type is yyyy-MM-dd. 
+Qualifier and format: The ANSI SQL standards specify the qualifiers and formats for character representations of datetime values. 
+Standard qualifier: The standard qualifier for a datetime value is YEAR TO SECOND. 
+Standard format: The standard format for a datetime value is YYYY-MM-DD HH:MM:SS. 
+
+2) Which subdivision of SQL is used to insert values in tables?
+ANS-The INSERT Statement is used to add new rows of data to a table.
+FOR EX- insert into tablename
+	Values(' ',' ');
