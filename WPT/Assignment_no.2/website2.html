@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #555e6c;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      width: 100%;
+      padding: 20px;
+      background-color: #742491;
+      color: #fff;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #83712f;
+      padding: 10px;
+    }
+    nav a {
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+    nav a:hover {
+      background-color: #9d4c67;
+      border-radius: 4px;
+    }
+    .content {
+      padding: 20px;
+      max-width: 800px;
+      text-align: center;
+    }
+    .greeting {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #e9f7ef;
+      border-radius: 4px;
+      color: #28a745;
+      display: none;
+    }
+    footer {
+      width: 100%;
+      padding: 10px;
+      background-color: #333;
+      color: #a79797;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+    }
+    .greet-btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .greet-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Welcome to Central Courier</h1>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="Website2">Home</a>
+    <a href="aboutUs.html">About Us</a>
+    <a href="sign-up">Sign-up</a>
+    <a href="sign-in">Sign-in</a>
+    <a href="contactUs">Contact Us</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h2>Courier Services</h2>
+    <p>
+      Our same-day courier services include standard same day, priority rush delivery, and dedicated route courier service.
+    </p>
+
+    <!-- Learn more Button -->
+    <button class="greet-btn" onclick="displayGreeting()">Learn More</button>
+
+    <!-- Learn more Output -->
+    <div class="greeting" id="greeting"></div>
+    <p>
+        Central Courier offers a variety of on-demand and scheduled services to meet your delivery needs. Some of the industries we service are Medical & Pharmaceuticals,
+        USPS Postal Mail Pickups, Mail Runs & Interoffice delivery, Title & Mortgage Companies, Manufacturing & Distribution, Construction & Engineering.
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Our Website. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function displayGreeting() {
+      const greetingDiv = document.getElementById("greeting");
+      const username = prompt("Please enter your name:");
+
+      if (username) {
+        greetingDiv.style.display = "block";
+        greetingDiv.innerHTML = `<p>Hello, <strong>${username}</strong>! Welcome to Central Courier.</p>`;
+      } else {
+        greetingDiv.style.display = "block";
+        greetingDiv.innerHTML = "<p>Please enter your name to receive a greeting.</p>";
+      }
+    }
+  </script>
+
+</body>
+</html>
