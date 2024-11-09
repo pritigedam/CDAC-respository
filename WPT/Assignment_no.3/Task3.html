@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Items from Drop-down List</title>
+</head>
+<style>
+    /* Basic Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+</style>
+<body>
+
+    <h1>Remove Items from Drop-down List</h1>
+    
+    <select id="mySelect" multiple>
+        <option value="1">Apple </option>
+        <option value="2">Banana</option>
+        <option value="3">Orange</option>
+        <option value="4">Watermelon</option>
+    </select>
+    
+    <button onclick="removeSelectedItems()">Remove Selected Items</button>
+    
+    <script>
+        function removeSelectedItems() {
+            const select = document.getElementById('mySelect');
+            const selectedOptions = Array.from(select.selectedOptions);
+            selectedOptions.forEach(option => {
+                select.remove(option.index);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;    
+        }
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Corrected property */
+            flex-direction: column; /* Added to center content vertically */
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Contact Form</h2>
+    <form id="contactForm">
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" required><br><br>
+        
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" required><br><br>
+        
+        <label for="contactNo">Contact No:</label><br>
+        <input type="tel" id="contactNo" required><br><br> <!-- Corrected type -->
+        
+        <label for="email">Email ID:</label><br>
+        <input type="email" id="email" required><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get values from the form
+            const firstName = document.getElementById("firstName").value;
+            const lastName = document.getElementById("lastName").value;
+            const contactNo = document.getElementById("contactNo").value;
+            const email = document.getElementById("email").value;
+
+            // Display the results
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `<h3>Submitted Information:</h3>
+                                   <p>First Name: ${firstName}</p>
+                                   <p>Last Name: ${lastName}</p>
+                                   <p>Contact No: ${contactNo}</p>
+                                   <p>Email ID: ${email}</p>`;
+        });
+    </script>
+
+</body>
+</html>

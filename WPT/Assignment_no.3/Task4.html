@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlight Bold Words</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p>One important aspect of<strong></strong>  Life is that it keeps going <strong>forward</strong> </p>
+    <p></p>This means nothing is <strong>permanent</strong> . Hence, there should be a <strong>reason</strong>  to stay in dejection.</p>
+    <p>A happy <strong> occasion</strong>  will come to pass, just like a sad one. Above all, one must be optimistic no <strong>matter</strong> how bad things get.</p>
+    <p>This is because nothing will stay <strong>forever</strong> . Every situation, occasion, and event shall pass. This is certainly a<strong>beauty</strong>  of Life.
+    </p>
+    <a href="#" id="highlightLink">On mouse over here bold words of the following paragraph will be highlighted</a>
+
+    <script>
+        const link = document.getElementById('highlightLink');
+        const boldWords = document.querySelectorAll('strong');
+
+        link.addEventListener('mouseover', () => {
+            boldWords.forEach(word => {
+                word.classList.add('highlight');
+            });
+        });
+
+        link.addEventListener('mouseout', () => {
+            boldWords.forEach(word => {
+                word.classList.remove('highlight');
+            });
+        });
+    </script>
+</body>
+</html>
