@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulated Network Request with Error Handling</title>
+</head>
+<body>
+    <h1>Simulate a Network Request</h1>
+    <div id="output"></div> <!-- This div will display the output -->
+
+    <script>
+        // Function to simulate fetching data from a URL
+        function fetchData(url, callback) {
+            console.log(`Fetching data from: ${url}`);
+
+            // Simulate a delay with setTimeout
+            setTimeout(() => {
+                // Simulate a random error (10% chance)
+                const isError = Math.random() < 0.1;
+
+                if (isError) {
+                    const errorMessage = `Error fetching data from ${url}`;
+                    console.error(errorMessage); // Log the error
+                    callback(errorMessage); // Call the callback with the error
+                } else {
+                    const response = `Response from ${url}`;
+                    callback(null, response); // Call the callback with the response
+                }
+            }, 2000); // 2-second delay
+        }
+
+        // Function to handle the response
+        function handleResponse(error, response) {
+            if (error) {
+                console.log(error); // Log the error
+                document.getElementById('output').textContent = error; // Show error in the output div
+            } else {
+                console.log(response); // Log the response
+                document.getElementById('output').textContent = response; // Show response in the output div
+            }
+        }
+
+        // Example URL
+        const url = 'https://example.com/api/data';
+        // Call fetchData with the URL and handleResponse as the callback
+        fetchData(url, handleResponse);
+    </script>
+</body>
+</html>

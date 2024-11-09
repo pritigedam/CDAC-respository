@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Function Example</title>
+</head>
+<body>
+    <h1>Process Data with Callback</h1>
+    <div id="output"></div> <!-- Div for displaying the output -->
+
+    <script>
+        // Callback function to convert a string to uppercase
+        function toUpperCase(str) {
+            return str.toUpperCase();
+        }
+
+        // Function that takes a string and a callback
+        function processData(inputString, callback) {
+            // Call the callback function with the input string
+            return callback(inputString);
+        }
+
+        // Example usage
+        const inputString = "hello, world!";
+        const result = processData(inputString, toUpperCase);
+
+        // Displaying the output in the div
+        document.getElementById('output').textContent = `Processed string: ${result}`;
+    </script>
+</body>
+</html>
+

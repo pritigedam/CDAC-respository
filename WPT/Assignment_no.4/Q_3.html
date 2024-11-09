@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulated Network Request</title>
+</head>
+<body>
+    <h1>Simulate a Network Request</h1>
+    <div id="output"></div> <!-- This div will display the output -->
+
+    <script>
+        // Function to simulate fetching data from a URL
+        function fetchData(url, callback) {
+            console.log(`Fetching data from: ${url}`); // Log the URL being fetched
+
+            // Simulate a delay with setTimeout
+            setTimeout(() => {
+                const response = `Response from ${url}`; // Create a simulated response
+                callback(response); // Call the provided callback with the response
+            }, 2000); // Wait for 2 seconds before executing
+        }
+
+        // Function to handle the response from fetchData
+        function handleResponse(response) {
+            console.log(response); // Log the response to the console
+            document.getElementById('output').textContent = response; // Display the response in the output div
+        }
+
+        // Example URL to fetch data from
+        const url = 'https://example.com/api/data';
+        // Call fetchData with the URL and handleResponse as the callback
+        fetchData(url, handleResponse);
+    </script>
+</body>
+</html>

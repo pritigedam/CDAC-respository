@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Each element Example</title>
+</head>
+<body>
+    <h1>Process Data with Callback</h1>
+    <div id="output"></div> <!-- Div for displaying the output -->
+
+    <script>
+        // Callback function to convert a string to uppercase
+        const array1 = ['a', 'b', 'c'];
+
+        let processedOutput = '';
+
+
+array1.forEach((element) => {
+    console.log(element); // Log each element to the console
+    processedOutput += element + ' '; // Append each element to the output string
+});
+
+
+document.getElementById('output').textContent = `Processed elements: ${processedOutput.trim()}`;
+</script>
+</body>
+</html>
